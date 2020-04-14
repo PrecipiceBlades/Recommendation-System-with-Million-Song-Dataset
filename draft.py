@@ -12,6 +12,23 @@ from pyspark.ml import Pipeline
 
 vectorizer = VectorAssembler()
 
+def getListOfFiles(dirName):
+    # create a list of file and sub directories 
+    # names in the given directory 
+    listOfFile = os.listdir(dirName)
+    allFiles = list()
+    # Iterate over all the entries
+    for entry in listOfFile:
+        # Create full path
+        fullPath = os.path.join(dirName, entry)
+        # If entry is a directory then get the list of files in this directory 
+        if os.path.isdir(fullPath):
+            allFiles = allFiles + getListOfFiles(fullPath)
+        else:
+            allFiles.append(fullPath)
+                
+    return allFiles
+
 # TODO: add more attribute
 def read_h5_to_list(filename):
     import sys
@@ -47,9 +64,12 @@ def read_h5_to_list(filename):
     return result
     
 num_nodes = 2
-data_path = "/home/hadoop/MillionSongSubset/data/A/A/A"
+
+# data_path = "/home/hadoop/MillionSongSubset/data/A/A/A"
+data_path = '/mnt/snap/data'
 # TODO: fix with nested dir
-filenames = [os.path.join(data_path, filename) for filename in os.listdir(data_path)]
+# filenames = [os.path.join(data_path, filename) for filename in os.listdir(data_path)]
+filenames = getListOfFiles(data_path)
 rdd = sc.parallelize(filenames, num_nodes)
 rdd1 = rdd.flatMap(lambda x: read_h5_to_list(x))
 # TODO: modified with attribute name
