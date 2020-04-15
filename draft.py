@@ -3,7 +3,7 @@ import h5py
 import tables
 import os
 import sys
-sys.path.insert(0, "/home/hadoop/script")
+sys.path.insert(0, "/home/hadoop/10605_Group8")
 from hdf5_getters import *
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.clustering import KMeans
@@ -34,7 +34,7 @@ def read_h5_to_list(filename):
     import sys
     import h5py
     import tables
-    sys.path.insert(0, "/home/hadoop/script")
+    sys.path.insert(0, "/home/hadoop/10605_Group8")
     from hdf5_getters import *
     h5tocopy = open_h5_file_read(filename)
     song_num = get_num_songs(h5tocopy)
