@@ -2,6 +2,7 @@
 set -x -e
 
 wget http://millionsongdataset.com/sites/default/files/tasteprofile/sid_mismatches.txt
-sudo yum install git
+sudo yum -y install git
+sudo yum -y install htop
 git clone https://github.com/YiRuitao/10605_Group8.git
 cd 10605_Group8; sudo bash dependencies.sh
