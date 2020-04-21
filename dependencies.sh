@@ -1,4 +1,5 @@
 sudo pip install \
   tables \
   numpy \
-  h5df
+  h5df \
+  scikit-learn
