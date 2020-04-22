@@ -1,8 +1,9 @@
 #!/bin/bash
 set -x -e
 
-wget http://millionsongdataset.com/sites/default/files/tasteprofile/sid_mismatches.txt
 sudo yum -y install git
 sudo yum -y install htop
+cd /home/hadoop
 git clone https://github.com/YiRuitao/10605_Group8.git
-cd 10605_Group8; sudo bash dependencies.sh
+cd 10605_Group8
+sudo bash dependencies.sh
