@@ -3,4 +3,7 @@ sudo pip-3.6 install \
   numpy \
   h5df \
   scikit-learn \
-  pandas
+  pandas \
+  matplotlib \
+  seaborn \
+  spark_notebook_helpers
