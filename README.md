@@ -47,11 +47,11 @@ $ ./setup-script.sh
 
 ### Download Dataset
 
-Download and extract VOC2012 dataset, SBD dataset, and pretrained models to designated directories.
+Download and extract dataset from here: http://millionsongdataset.com/ to designated directories.
 
 ## Results
 
-
+We achieved 0.4 recall when setting the cosine similarity threshold as 0.9 and 5.0524 RMSE with collabrative filtering
 
 ## References
 
